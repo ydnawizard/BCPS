@@ -1,7 +1,7 @@
 #include "src/main.h"
 
 //SEEDS/RESETS THE TEXT POINTER
-void seedTEXT(int *** TEXT)
+void SEED_TEXT(int *** TEXT)
 {
 	(*TEXT)[0][0] = 1;
 	(*TEXT)[0][1] = 1;
@@ -24,7 +24,7 @@ int main()
 	{
 		TEXT[i] = malloc(12 * sizeof(char));
 	}
-	seedTEXT(&TEXT);
+	SEED_TEXT(&TEXT);
 	printf("%s\n","ORIGINAL PLAINTEXT:");
 	for(int i = 0; i < 3; i++)
 	{
@@ -46,6 +46,17 @@ int main()
 	}
 	CBC_DECRYPT(KEY,&TEXT);
 	printf("%s\n","TEXT AFTER CBC DECRYPTION:");
+	for(int i = 0; i < 3; i++)
+	{
+		for(int j = 0; j < 4; j++)
+		{
+			printf("%d",TEXT[i][j]);
+		}
+		printf("\n");
+	}
+	SEED_TEXT(&TEXT);
+	CFB_ENCRYPT(KEY,&TEXT);
+	printf("%s\n","TEXT AFTER CFB ENCRYPTION");
 	for(int i = 0; i < 3; i++)
 	{
 		for(int j = 0; j < 4; j++)
