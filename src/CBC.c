@@ -31,6 +31,7 @@ void CBC_DECRYPT(int * KEY,int *** TEXT)
 {
 	//INIT IV
 	int IV[4] = {1,1,0,0};
+	//Y ARRAY INIT
 	int ** PRE_BLOCK = malloc(3*sizeof(int*));
 	for(int i = 0; i < 3; i++)
 	{
@@ -61,5 +62,6 @@ void CBC_DECRYPT(int * KEY,int *** TEXT)
 			}
 		}
 	}
+	free(PRE_BLOCK);
 }
 	

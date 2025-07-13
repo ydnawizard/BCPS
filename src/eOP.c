@@ -20,14 +20,7 @@ int XOR(int bit1,int bit2)
 //LEFT-SHIFT OP
 void SHIFT(int ** BLOCK)
 {
-	//PAD IF NEEDED
-	for(int i = 0; i < 4; i++)
-	{
-		if((*BLOCK)[i] ==  -1)
-		{
-			(*BLOCK)[i] = 0;
-		}
-	}
+
 	//RETAIN INDEX 0
 	int mem = (*BLOCK)[0];
 	//SHIFT LEFT

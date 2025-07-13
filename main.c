@@ -32,18 +32,20 @@ int main()
 		{
 			printf("%d",TEXT[i][j]);
 		}
-		printf("\n");
+		printf(" ");
 	}
+	printf("\n");
 	CBC_ENCRYPT(KEY,&TEXT);
-	printf("%s\n","TEXT AFTER CBC:");
+	printf("%s\n","TEXT AFTER CBC ENCRYPTION:");
 	for(int i = 0; i < 3; i++)
 	{
 		for(int j = 0; j < 4; j++)
 		{
 			printf("%d",TEXT[i][j]);
 		}
-		printf("\n");
+		printf(" ");
 	}
+	printf("\n");
 	CBC_DECRYPT(KEY,&TEXT);
 	printf("%s\n","TEXT AFTER CBC DECRYPTION:");
 	for(int i = 0; i < 3; i++)
@@ -52,18 +54,31 @@ int main()
 		{
 			printf("%d",TEXT[i][j]);
 		}
-		printf("\n");
+		printf(" ");
 	}
+	printf("\n");
 	SEED_TEXT(&TEXT);
 	CFB_ENCRYPT(KEY,&TEXT);
-	printf("%s\n","TEXT AFTER CFB ENCRYPTION");
+	printf("%s\n","TEXT AFTER CFB ENCRYPTION:");
 	for(int i = 0; i < 3; i++)
 	{
 		for(int j = 0; j < 4; j++)
 		{
 			printf("%d",TEXT[i][j]);
 		}
-		printf("\n");
+		printf(" ");
 	}
+	printf("\n");
+	CFB_DECRYPT(KEY,&TEXT);
+	printf("%s\n","TEXT AFTER CFB DECRYPTION:");
+	for(int i = 0; i < 3; i++)
+	{
+		for(int j = 0; j < 4; j++)
+		{
+			printf("%d",TEXT[i][j]);
+		}
+		printf(" ");
+	}
+	printf("\n");
 
 }
