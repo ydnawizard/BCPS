@@ -80,5 +80,28 @@ int main()
 		printf(" ");
 	}
 	printf("\n");
+	SEED_TEXT(&TEXT);
+	OFB_ENCRYPT(KEY,&TEXT);
+	printf("%s\n","TEXT AFTER OFB ENCRYPTION:");
+	for(int i = 0; i < 3; i++)
+	{
+		for(int j = 0; j < 4; j++)
+		{
+			printf("%d",TEXT[i][j]);
+		}
+		printf(" ");
+	}
+	printf("\n");
+	COUNTER_ENCRYPT(KEY,&TEXT);
+	printf("%s\n","TEXT AFTER COUNTER ENCRYPTION:");
+	for(int i = 0; i < 3; i++)
+	{
+		for(int j = 0; j < 4; j++)
+		{
+			printf("%d",TEXT[i][j]);
+		}
+		printf(" ");
+	}
+	printf("\n");
 
 }
